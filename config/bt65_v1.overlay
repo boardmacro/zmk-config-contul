@@ -1,7 +1,7 @@
 
 / {
     aliases {
-        row0 = &gpio0 6;   // P0.06 - D0 - TX
+        row0 = &gpio0 8;   // P0.06 - D0 - TX
         row1 = &gpio0 31;  // P0.31 - D17 - A2
         row2 = &gpio1 11;  // P1.11 - D12
         row3 = &gpio1 6;   // P1.06 - D9
