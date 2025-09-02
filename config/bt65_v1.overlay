@@ -71,8 +71,8 @@
     };
 };
 
-/* Pastikan controller GPIO aktif */
-&gpio0 { status = "okay"; };
-&gpio1 { status = "okay"; };
+/* Matikan SPI jika pakai pin MISO1/SCK1/MOSI1 */
+&spi1 { status = "disabled"; };
 
+&gpio0 { status = "okay"; };
 &gpio1 { status = "okay"; };
