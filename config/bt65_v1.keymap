@@ -18,15 +18,15 @@
             sensors {
                 compatible = "zmk,sensors";
 
-                // Encoder 1 -> cetak huruf
+                /* Cocok ke label di overlay */
                 sensor-0 = <&encoder1>;
-                sensor-0-cw  = <&kp A>;
-                sensor-0-ccw = <&kp B>;
-
-                // Encoder 2 -> cetak huruf
                 sensor-1 = <&encoder2>;
-                sensor-1-cw  = <&kp C>;
-                sensor-1-ccw = <&kp D>;
+
+                /* Keycode yang valid di ZMK: */
+                sensor-0-cw  = <&kp C_VOL_UP>;
+                sensor-0-ccw = <&kp C_VOL_DOWN>;
+                sensor-1-cw  = <&kp PG_UP>;
+                sensor-1-ccw = <&kp PG_DN>;
             };
         };
     };
