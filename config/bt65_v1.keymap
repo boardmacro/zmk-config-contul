@@ -15,7 +15,20 @@
                 &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
                 &kp Y     &kp Y     &kp Y     &kp Y     &kp SPACE &kp Y     &kp RCTRL  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
+sensors {
+                compatible = "zmk,sensors";
 
+                // Encoder 1
+                sensor-0 = <&encoder1>;
+                sensor-0-cw = <&kp A>;
+                sensor-0-ccw = <&kp B>;
+
+                // Encoder 2
+                sensor-1 = <&encoder2>;
+                sensor-1-cw = <&kp C>;
+                sensor-1-ccw = <&kp D>;
+            };
+            // Sampai sini
             // Hapus baris ini jika keyboard kamu tidak pakai encoder
             // sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
