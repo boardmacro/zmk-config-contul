@@ -54,21 +54,21 @@
 / {
     // Encoder 1: A = P1.02, B = P1.01
     encoder1: encoder1 {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <4>;   // ganti dari steps-per-period -> resolution
-        status = "okay";
-    };
+    compatible = "rotary-encoder";
+    a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    steps = <4>;          // coba 2 jika masih “diam”
+    status = "okay";
+};
 
-    // Encoder 2: A = P0.17, B = P1.07
-    encoder2: encoder2 {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <4>;
-        status = "okay";
-    };
+encoder2: encoder2 {
+    compatible = "rotary-encoder";
+    a-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    steps = <4>;
+    status = "okay";
+};
+
 };
 
 /* Penting di nRF52: matikan NFC supaya P0.09/P0.10 jadi GPIO */
