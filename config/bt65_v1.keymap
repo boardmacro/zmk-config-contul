@@ -20,8 +20,8 @@ sensors {
 
                 // Encoder 1
                 sensor-0 = <&encoder1>;
-                sensor-0-cw = <&kp A>;
-                sensor-0-ccw = <&kp B>;
+                sensor-0-cw = <&kp X>;
+                sensor-0-ccw = <&kp Y>;
 
                 // Encoder 2
                 sensor-1 = <&encoder2>;
