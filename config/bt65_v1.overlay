@@ -20,7 +20,7 @@
     };
 };
 
-/* Pakai node KSCAN yang sudah ada, jangan bikin label baru */
+/* Pakai node KSCAN yang sudah ada */
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
     wakeup-source;
@@ -36,7 +36,7 @@
         <&gpio1 13 GPIO_ACTIVE_LOW>,
         <&gpio0 2  GPIO_ACTIVE_LOW>,
         <&gpio1 15 GPIO_ACTIVE_LOW>,
-        <&gpio0 9 GPIO_ACTIVE_LOW>,
+        <&gpio0 9  GPIO_ACTIVE_LOW>,
         <&gpio0 10 GPIO_ACTIVE_LOW>;
 
     /* Rows (5 pin) – aktif low + pull-up */
@@ -52,29 +52,29 @@
 };
 
 / {
-    // Encoder 1: A = P1.02, B = P1.01
+    /* Encoder 1: A = P1.02, B = P1.01 */
     encoder1: encoder1 {
-    compatible = "rotary-encoder";
-    a-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <80>;          // coba 2 jika masih “diam”
-    status = "okay";
+        compatible = "rotary-encoder";
+        a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        resolution = <2>; /* ganti jadi: steps = <2>; jika 'resolution' error */
+        status = "okay";
+    };
+
+    /* Encoder 2: A = P0.17, B = P1.07 */
+    encoder2: encoder2 {
+        compatible = "rotary-encoder";
+        a-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        resolution = <2>; /* ganti jadi: steps = <2>; jika 'resolution' error */
+        status = "okay";
+    };
 };
 
-encoder2: encoder2 {
-    compatible = "rotary-encoder";
-    a-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    b-gpios = <&gpio0 17  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    steps = <80>;
-    status = "okay";
-};
-
-};
-
-/* Penting di nRF52: matikan NFC supaya P0.09/P0.10 jadi GPIO */
+/* nRF52: aktifkan P0.09/P0.10 sebagai GPIO, bukan NFC */
 &nfct { status = "disabled"; };
 
-/* Matikan SPI1 agar pin bertanda MISO1/SCK1/MOSI1 tidak diambil driver SPI */
+/* Pastikan SPI1 tidak mengambil pin yang sama */
 &spi1 { status = "disabled"; };
 
 &gpio0 { status = "okay"; };
