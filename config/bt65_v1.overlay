@@ -1,6 +1,4 @@
-
-/ {
-    aliases {
+/aliases {
     row0 = &gpio0 <8>;
     row1 = &gpio0 <2>;
     row2 = &gpio0 <3>;
@@ -17,8 +15,6 @@
     col7 = &gpio1 <11>;
     col8 = &gpio1 <13>;
     col9 = &gpio1 <15>;
-};
-
 };
 
 &gpio0 {
