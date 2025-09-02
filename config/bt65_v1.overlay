@@ -1,21 +1,35 @@
 / {
-    aliases {
-        row0 = &gpio0 8;
-        row1 = &gpio0 2;
-        row2 = &gpio0 3;
-        row3 = &gpio0 5;
-        row4 = &gpio0 6;
+    chosen {
+        zmk,matrix-transform = &default_transform;
+    };
 
-        col0 = &gpio0 7;
-        col1 = &gpio0 9;
-        col2 = &gpio0 11;
-        col3 = &gpio0 12;
-        col4 = &gpio0 29;
-        col5 = &gpio1 4;
-        col6 = &gpio1 6;
-        col7 = &gpio1 11;
-        col8 = &gpio1 13;
-        col9 = &gpio1 15;
+    &kscan0 {
+        compatible = "zmk,kscan-gpio-matrix-transform";
+        label = "KSCAN";
+        matrix-transform = &default_transform;
+        row-gpios = < 
+            &gpio0 8 GPIO_ACTIVE_LOW>, 
+            < &gpio0 2 GPIO_ACTIVE_LOW>, 
+            < &gpio0 3 GPIO_ACTIVE_LOW>, 
+            < &gpio0 5 GPIO_ACTIVE_LOW>, 
+            < &gpio0 6 GPIO_ACTIVE_LOW>;
+        col-gpios = <
+            &gpio0 7 GPIO_ACTIVE_LOW>, 
+            < &gpio0 9 GPIO_ACTIVE_LOW>, 
+            < &gpio0 11 GPIO_ACTIVE_LOW>, 
+            < &gpio0 12 GPIO_ACTIVE_LOW>, 
+            < &gpio0 29 GPIO_ACTIVE_LOW>, 
+            < &gpio1 4 GPIO_ACTIVE_LOW>, 
+            < &gpio1 6 GPIO_ACTIVE_LOW>, 
+            < &gpio1 11 GPIO_ACTIVE_LOW>, 
+            < &gpio1 13 GPIO_ACTIVE_LOW>, 
+            < &gpio1 15 GPIO_ACTIVE_LOW>;
+    };
+
+    default_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+        columns = < 0 1 2 3 4 5 6 7 8 9 >;
+        rows = < 0 1 2 3 4 >;
     };
 };
 
