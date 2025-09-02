@@ -1,20 +1,22 @@
-/aliases {
-    row0 = &gpio0 <8>;
-    row1 = &gpio0 <2>;
-    row2 = &gpio0 <3>;
-    row3 = &gpio0 <5>;
-    row4 = &gpio0 <6>;
+/ {
+    aliases {
+        row0 = &gpio0 8;
+        row1 = &gpio0 2;
+        row2 = &gpio0 3;
+        row3 = &gpio0 5;
+        row4 = &gpio0 6;
 
-    col0 = &gpio0 <7>;
-    col1 = &gpio0 <9>;
-    col2 = &gpio0 <11>;
-    col3 = &gpio0 <12>;
-    col4 = &gpio0 <29>;
-    col5 = &gpio1 <4>;
-    col6 = &gpio1 <6>;
-    col7 = &gpio1 <11>;
-    col8 = &gpio1 <13>;
-    col9 = &gpio1 <15>;
+        col0 = &gpio0 7;
+        col1 = &gpio0 9;
+        col2 = &gpio0 11;
+        col3 = &gpio0 12;
+        col4 = &gpio0 29;
+        col5 = &gpio1 4;
+        col6 = &gpio1 6;
+        col7 = &gpio1 11;
+        col8 = &gpio1 13;
+        col9 = &gpio1 15;
+    };
 };
 
 &gpio0 {
