@@ -55,29 +55,24 @@
     // Encoder 1: A = P1.02, B = P1.01
     encoder1: encoder1 {
         compatible = "alps,ec11";
-        label = "ENCODER_1";
         a-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps-per-period = <4>; // coba 2 kalau terlalu sensitif
+        resolution = <4>;   // ganti dari steps-per-period -> resolution
         status = "okay";
     };
 
     // Encoder 2: A = P0.17, B = P1.07
     encoder2: encoder2 {
         compatible = "alps,ec11";
-        label = "ENCODER_2";
         a-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps-per-period = <4>;
+        resolution = <4>;
         status = "okay";
     };
 };
 
-/* pastikan controller GPIO aktif (sudah ada di bawahmu) */
+/* Pastikan controller GPIO aktif */
 &gpio0 { status = "okay"; };
 &gpio1 { status = "okay"; };
 
-
-/* Pastikan controller GPIO aktif */
-&gpio0 { status = "okay"; };
 &gpio1 { status = "okay"; };
