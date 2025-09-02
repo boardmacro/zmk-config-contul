@@ -21,7 +21,6 @@
     };
   };
 
-  /* 2) Keymap: referensikan sensors di layer, lalu map CW/CCW ke aksi */
   keymap {
     compatible = "zmk,keymap";
 
@@ -34,14 +33,9 @@
         &kp Y    &kp N5   &kp N7   &kp LEFT &kp DOWN &kp RIGHT &kp N8  &kp N9   &kp N0   &kp F11
       >;
 
-      /* Urutannya HARUS sama dengan urutan sensor-bindings di bawah */
-      sensors = <&left_enc &right_enc>;
-
-      /* Map CW dan CCW untuk masing-masing sensor di atas, berurutan */
-      sensor-bindings = <
-        &inc_dec_kp  A  B   /* left_enc: putar CW -> A, CCW -> B */
-        &inc_dec_kp  C  D   /* right_enc: putar CW -> C, CCW -> D */
-      >;
+      /* Hapus:
+         sensors = <&left_enc &right_enc>;
+         sensor-bindings = < ... >; */
     };
   };
 };
