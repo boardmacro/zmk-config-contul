@@ -71,7 +71,10 @@
     };
 };
 
-/* Matikan SPI jika pakai pin MISO1/SCK1/MOSI1 */
+/* Penting di nRF52: matikan NFC supaya P0.09/P0.10 jadi GPIO */
+&nfct { status = "disabled"; };
+
+/* Matikan SPI1 agar pin bertanda MISO1/SCK1/MOSI1 tidak diambil driver SPI */
 &spi1 { status = "disabled"; };
 
 &gpio0 { status = "okay"; };
