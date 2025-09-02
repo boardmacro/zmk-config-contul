@@ -15,19 +15,24 @@
                 &kp S     &kp D     &kp F     &kp G     &kp H     &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
                 &kp Y     &kp N5    &kp N7    &kp LEFT  &kp DOWN  &kp RIGHT  &kp N8     &kp N9    &kp N0    &kp F11
             >;
-            sensors {
-                compatible = "zmk,sensors";
+            / {
+  sensors {
+    compatible = "zmk,sensors";
 
-                // Encoder 1 -> cetak huruf
-                sensor-0 = <&encoder1>;
-                sensor-0-cw  = <&kp A>;
-                sensor-0-ccw = <&kp B>;
+    left_enc: left_enc {
+      compatible = "zmk,sensor-encoder";
+      sensor = <&encoder1>;
+      /* Encoder kiri: CW -> A, CCW -> B */
+      bindings = <&inc_dec_kp A B>;
+    };
 
-                // Encoder 2 -> cetak huruf
-                sensor-1 = <&encoder2>;
-                sensor-1-cw  = <&kp C>;
-                sensor-1-ccw = <&kp D>;
-            };
+    right_enc: right_enc {
+      compatible = "zmk,sensor-encoder";
+      sensor = <&encoder2>;
+      /* Encoder kanan: CW -> C, CCW -> D */
+      bindings = <&inc_dec_kp C D>;
+    };
+  };
         };
     };
 };
