@@ -20,13 +20,12 @@
     };
 };
 
-/* Pakai node KSCAN yang sudah ada */
+/* KSCAN kamu tetap; pastikan persis seperti ini (atau yang sudah kamu pakai) */
 &kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
     wakeup-source;
     diode-direction = "col2row";
 
-    /* Columns (10 pin) */
     col-gpios =
         <&gpio1 4  GPIO_ACTIVE_LOW>,
         <&gpio0 8  GPIO_ACTIVE_LOW>,
@@ -39,7 +38,6 @@
         <&gpio0 9  GPIO_ACTIVE_LOW>,
         <&gpio0 10 GPIO_ACTIVE_LOW>;
 
-    /* Rows (5 pin) – aktif low + pull-up */
     row-gpios =
         <&gpio0 6   (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
         <&gpio0 31  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
@@ -57,7 +55,7 @@
         compatible = "rotary-encoder";
         a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <2>; /* ganti jadi: steps = <2>; jika 'resolution' error */
+        steps = <2>; /* jika build error, ganti ke: resolution = <2>; */
         status = "okay";
     };
 
@@ -66,15 +64,13 @@
         compatible = "rotary-encoder";
         a-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <2>; /* ganti jadi: steps = <2>; jika 'resolution' error */
+        steps = <2>; /* jika build error, ganti ke: resolution = <2>; */
         status = "okay";
     };
 };
 
-/* nRF52: aktifkan P0.09/P0.10 sebagai GPIO, bukan NFC */
+/* Bebaskan pin khusus SoC yang bisa rebut GPIO */
 &nfct { status = "disabled"; };
-
-/* Pastikan SPI1 tidak mengambil pin yang sama */
 &spi1 { status = "disabled"; };
 
 &gpio0 { status = "okay"; };
