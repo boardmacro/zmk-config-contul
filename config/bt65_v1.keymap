@@ -20,13 +20,13 @@
 
                 // Encoder 1 -> cetak huruf
                 sensor-0 = <&encoder1>;
-                sensor-0-cw  = <&kp Z>;
-                sensor-0-ccw = <&kp F>;
+                sensor-0-cw  = <&kp VOL_UP>;
+                sensor-0-ccw = <&kp VOL_DN>;
 
                 // Encoder 2 -> cetak huruf
                 sensor-1 = <&encoder2>;
-                sensor-1-cw  = <&kp W>;
-                sensor-1-ccw = <&kp G>;
+                sensor-1-cw  = <&kp PGUP>;
+                sensor-1-ccw = <&kp PGDN>;
             };
         };
     };
