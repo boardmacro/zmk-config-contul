@@ -6,14 +6,23 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            /* Isi minimal biar valid; matrix-mu tetap dipakai */
-            bindings = <&kp A>;
+            /* 5x10 = 50 entri, pakai &trans semua agar valid */
+            bindings = <
+                &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
+            >;
 
             sensors {
                 compatible = "zmk,sensors";
+
+                /* Harus persis sama dengan label di .overlay */
                 sensor-0 = <&encoder1>;
                 sensor-1 = <&encoder2>;
 
+                /* Pakai keycode yang valid di ZMK */
                 sensor-0-cw  = <&kp C_VOL_UP>;
                 sensor-0-ccw = <&kp C_VOL_DOWN>;
                 sensor-1-cw  = <&kp PG_UP>;
