@@ -57,7 +57,7 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <4>;   // ganti dari steps-per-period -> resolution
+        resolution = <1>;   // ganti dari steps-per-period -> resolution
         status = "okay";
     };
 
@@ -66,7 +66,7 @@
         compatible = "alps,ec11";
         a-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <4>;
+        resolution = <1>;
         status = "okay";
     };
 };
