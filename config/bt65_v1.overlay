@@ -1,22 +1,22 @@
 
 / {
     aliases {
-        row0 = &gpio0 8;   // P0.06 - D0 - TX
-        row1 = &gpio1 0;  // P0.31 - D17 - A2
-        row2 = &gpio1 11;  // P1.11 - D12
-        row3 = &gpio1 6;   // P1.06 - D9
-        row4 = &gpio0 20;  // P0.20 - D3 - MISO
+        row0 = &gpio0 8;   
+        row1 = &gpio1 17;  
+        row2 = &gpio1 11;  
+        row3 = &gpio1 6;   
+        row4 = &gpio0 20;  
 
-        col0 = &gpio1 4;   // P1.04 - D8
-        col1 = &gpio0 8;   // P0.08 - D1 - RX
-        col2 = &gpio0 24;  // P0.24 - D5 - CS
-        col3 = &gpio0 22;  // P0.22 - D4 - MOSI
-        col4 = &gpio0 29;  // P0.29 - D16 - A1
-        col5 = &gpio1 13;  // P1.13 - D13 - SDA1
-        col6 = &gpio0 2;   // P0.02 - D15 - A0
-        col7 = &gpio1 15;  // P1.15 - D14 - SLC1
-        col8 = &gpio0 9;   // P0.09 - D10 - NFC1
-        col9 = &gpio0 10;  // P0.10 - D11 - NFC2
+        col0 = &gpio1 4;   
+        col1 = &gpio0 8;   
+        col2 = &gpio0 24;  
+        col3 = &gpio0 22;  
+        col4 = &gpio0 29;  
+        col5 = &gpio1 13;  
+        col6 = &gpio0 2;   
+        col7 = &gpio1 15;  C1
+        col8 = &gpio0 9;   
+        col9 = &gpio0 10;  
     };
 };
 
