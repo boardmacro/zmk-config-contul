@@ -5,12 +5,3 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     secrets: inherit
-    with:
-      zmk-ref: main
-      # Jika perlu spesifik board atau shield, tambahkan salah satu:
-      # board: bt65_v1
-      # atau
-      # shield: |
-      #   corne_left
-      #   corne_right
-      archive-artifacts: true
