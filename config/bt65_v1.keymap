@@ -9,17 +9,11 @@
     left_enc: left_enc {
       compatible = "zmk,sensor-encoder";
       sensor = <&encoder1>;
-      /* Encoder kiri: CW -> A, CCW -> B */
-      bindings = <&inc_dec_kp A B>;
-    };
-
-    right_enc: right_enc {
-      compatible = "zmk,sensor-encoder";
-      sensor = <&encoder2>;
-      /* Encoder kanan: CW -> C, CCW -> D */
-      bindings = <&inc_dec_kp C D>;
+      bindings = <&inc_dec_kp KC_VOLU KC_VOLD>;
     };
   };
+};
+
 
   keymap {
     compatible = "zmk,keymap";
