@@ -51,17 +51,23 @@
     debounce-release-ms = <5>;
 };
 
-/ {
-    // Encoder 1: A = P1.02, B = P1.01
+&{zephyr,user} { /* opsional, jika perlu label user */ };
+
+&gpio0 { status = "okay"; };
+&gpio1 { status = "okay"; };
+
+&nfct { status = "disabled"; };
+&spi1 { status = "disabled"; };
+
+ / {
     encoder1: encoder1 {
         compatible = "alps,ec11";
         a-gpios = <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        resolution = <4>;   // ganti dari steps-per-period -> resolution
+        resolution = <4>;
         status = "okay";
     };
 
-    // Encoder 2: A = P0.17, B = P1.07
     encoder2: encoder2 {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -70,12 +76,3 @@
         status = "okay";
     };
 };
-
-/* Penting di nRF52: matikan NFC supaya P0.09/P0.10 jadi GPIO */
-&nfct { status = "disabled"; };
-
-/* Matikan SPI1 agar pin bertanda MISO1/SCK1/MOSI1 tidak diambil driver SPI */
-&spi1 { status = "disabled"; };
-
-&gpio0 { status = "okay"; };
-&gpio1 { status = "okay"; };
