@@ -1,7 +1,7 @@
 
 / {
     aliases {
-        row0 = &gpio0 8;   
+        row0 = &gpio0 20;   
         row1 = &gpio0 2;  
         row2 = &gpio0 3;  
         row3 = &gpio0 5;   
