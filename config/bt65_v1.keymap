@@ -7,11 +7,11 @@
 
         default_layer {
             bindings = <
-                &kp KC_F1   &kp KC_F2   &kp KC_F3   &kp KC_F4   &kp KC_F5   &kp KC_F6   &kp KC_F7   &kp KC_F8   &kp KC_F9   &kp KC_F10
-                &kp KC_0    &kp KC_1    &kp KC_2    &kp KC_BSPC &kp KC_TAB  &kp KC_Q    &kp KC_W    &kp KC_E    &kp KC_R    &kp KC_T
-                &kp KC_4    &kp KC_U    &kp KC_I    &kp KC_O    &kp KC_P    &kp KC_LBRC &kp KC_RBRC &kp KC_BSLS &kp KC_CAPS &kp KC_A
-                &kp KC_S    &kp KC_D    &kp KC_F    &kp KC_G    &kp KC_H    &kp KC_J    &kp KC_K    &kp KC_L    &kp KC_SCLN &kp KC_QUOT
-                &kp KC_Y    &kp KC_5    &kp KC_7    &kp KC_LEFT &kp KC_DOWN &kp KC_RIGHT &kp KC_8   &kp KC_9    &kp KC_0    &kp KC_F11
+                &kp KC_Q   &kp KC_W   &kp KC_E   &kp KC_R   &kp KC_T
+                &kp KC_A   &kp KC_S   &kp KC_D   &kp KC_F   &kp KC_G
+                &kp KC_Z   &kp KC_X   &kp KC_C   &kp KC_V   &kp KC_B
+                &kp KC_1   &kp KC_2   &kp KC_3   &kp KC_4   &kp KC_5
+                &kp KC_SPC &kp KC_TAB &kp KC_ESC &kp KC_ENT &kp KC_BSPC
             >;
         };
     };
