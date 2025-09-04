@@ -41,7 +41,7 @@
 
     /* Rows (5 pin) – aktif low + pull-up */
     row-gpios =
-        <&gpio0 6   (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&gpio0 17   (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
         <&gpio0 31  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
         <&gpio1 11  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
         <&gpio1 6   (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
