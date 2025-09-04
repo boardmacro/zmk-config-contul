@@ -36,13 +36,17 @@
     };
 };
 
-/* Matikan semua peripheral yang tidak dipakai */
-&spi0  { status = "disabled"; };
-&spi1  { status = "disabled"; };
-&spi2  { status = "disabled"; };
-&i2c1  { status = "disabled"; };
-&uart1 { status = "disabled"; };
-&pwm0  { status = "disabled"; };
-&pwm1  { status = "disabled"; };
-&pwm2  { status = "disabled"; };
-&nfct  { status = "disabled"; };
+/* Matikan peripheral yang tidak dipakai */
+&nfct   { status = "disabled"; };   /* ← perhatikan tanda ; di akhir */
+&spi0   { status = "disabled"; };
+&spi1   { status = "disabled"; };
+&spi2   { status = "disabled"; };
+&i2c1   { status = "disabled"; };
+&uart0  { status = "disabled"; };
+&uart1  { status = "disabled"; };
+&pwm0   { status = "disabled"; };
+&pwm1   { status = "disabled"; };
+&pwm2   { status = "disabled"; };
+
+/* Jika ingin matikan pwmleds (LED PWM), tambahkan: */
+&pwmleds { status = "disabled"; };
