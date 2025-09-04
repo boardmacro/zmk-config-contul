@@ -53,11 +53,10 @@
 
 /* OLED SSD1306 di I2C0: SDA = P1.00, SCL = P0.11 */
 &i2c0 {
-    compatible = "nordic,nrf-twi";
     status = "okay";
-    sda-pin = <0>;   /* P1.00 */
-    scl-pin = <11>;  /* P0.11 */
-    clock-frequency = <I2C_BITRATE_STANDARD>; /* 100kHz aman untuk awal */
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -68,7 +67,16 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-        /* reset-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>; */ /* kalau OLED ada pin reset */
+    };
+};
+
+/* Definisi pinctrl untuk I2C0: SDA = P1.00, SCL = P0.11 */
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 0)>, /* P1.00 */
+                    <NRF_PSEL(TWIM_SCL, 0, 11)>; /* P0.11 */
+        };
     };
 };
 
