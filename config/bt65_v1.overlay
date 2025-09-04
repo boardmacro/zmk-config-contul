@@ -92,7 +92,6 @@
 &pwm0 { status = "disabled"; };
 &pwm1 { status = "disabled"; };
 &pwm2 { status = "disabled"; };
-&pwmleds { status = "disabled"; };   /* Matikan LED PWM bawaan */
 
 /* Pastikan GPIO aktif */
 &gpio0 { status = "okay"; };
