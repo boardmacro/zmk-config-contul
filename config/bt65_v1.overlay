@@ -28,16 +28,17 @@
 
     /* Columns (10 pin) */
     col-gpios =
-        <&gpio1 4  GPIO_ACTIVE_LOW>,
-        <&gpio0 8  GPIO_ACTIVE_LOW>,
-        <&gpio0 24 GPIO_ACTIVE_LOW>,
-        <&gpio0 22 GPIO_ACTIVE_LOW>,
-        <&gpio0 29 GPIO_ACTIVE_LOW>,
-        <&gpio1 13 GPIO_ACTIVE_LOW>,
-        <&gpio0 2  GPIO_ACTIVE_LOW>,
-        <&gpio1 15 GPIO_ACTIVE_LOW>,
-        <&gpio0 9 GPIO_ACTIVE_LOW>,
-        <&gpio0 10 GPIO_ACTIVE_LOW>;
+        <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C0 */
+        <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C1 */
+        <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C2 */
+        <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C3 */
+        <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C4 */
+        <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C5 */
+        <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C6 */
+        <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C7 */
+        <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C8 */
+        <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; /* C9 */
+
 
     /* Rows (5 pin) – aktif low + pull-up */
     row-gpios =
