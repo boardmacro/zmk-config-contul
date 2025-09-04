@@ -41,7 +41,7 @@
 
     /* ROWS → input, aktif LOW, default HIGH */
     row-gpios =
-        <&gpio0 17  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* R0 */
+        <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* R0 */
         <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* R1 */
         <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* R2 */
         <&gpio1 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* R3 */
