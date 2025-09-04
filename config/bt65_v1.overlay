@@ -90,7 +90,7 @@
 &pwm0    { status = "disabled"; };
 &pwm1    { status = "disabled"; };
 &pwm2    { status = "disabled"; };
-
+&pwmleds { status = "disabled"; };
 
 /* Aktifkan GPIO1 jika dibutuhkan */
 &gpio1   { status = "okay"; };
