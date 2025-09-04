@@ -1,3 +1,4 @@
+/dts-v1/;
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -77,7 +78,7 @@
     };
 };
 
-/* Matikan peripheral yang tidak dipakai */
+/* Nonaktifkan peripheral yang tak dipakai */
 &nfct   { status = "disabled"; };
 &spi0   { status = "disabled"; };
 &spi1   { status = "disabled"; };
@@ -88,7 +89,7 @@
 &pwm0   { status = "disabled"; };
 &pwm1   { status = "disabled"; };
 &pwm2   { status = "disabled"; };
-
-/* Jika board punya LED PWM alias pwmleds, nonaktifkan juga */
 &pwmleds { status = "disabled"; };
-&gpio1 { status = "okay"; };
+
+/* Pastikan GPIO1 diaktifkan jika dibutuhkan */
+&gpio1  { status = "okay"; };
