@@ -1,5 +1,3 @@
-/dts-v1/;
-
 / {
     model = "BT65 V1 Custom Keyboard";
     compatible = "zmk,bt65_v1", "nordic,nrf52840-qiaa";
