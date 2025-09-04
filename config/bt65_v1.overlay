@@ -22,34 +22,34 @@
 
 /* Pakai node KSCAN yang sudah ada, jangan bikin label baru */
 &kscan0 {
-    compatible = "zmk,kscan-gpio-matrix";
-    wakeup-source;
-    diode-direction = "col2row";
+  compatible = "zmk,kscan-gpio-matrix";
+  diode-direction = "col2row";
 
-    /* Columns (10 pin) */
-    col-gpios =
-        <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C0 */
-        <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C1 */
-        <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C2 */
-        <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C3 */
-        <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C4 */
-        <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C5 */
-        <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C6 */
-        <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C7 */
-        <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, /* C8 */
-        <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; /* C9 */
+  /* Drive kolom dengan HIGH, idle = LOW */
+  col-gpios = <
+    &gpio1 4  (GPIO_ACTIVE_HIGH)
+    &gpio0 8  (GPIO_ACTIVE_HIGH)
+    &gpio0 24 (GPIO_ACTIVE_HIGH)
+    &gpio0 22 (GPIO_ACTIVE_HIGH)
+    &gpio0 29 (GPIO_ACTIVE_HIGH)
+    &gpio1 13 (GPIO_ACTIVE_HIGH)
+    &gpio0 2  (GPIO_ACTIVE_HIGH)
+    &gpio1 15 (GPIO_ACTIVE_HIGH)
+    &gpio0 9  (GPIO_ACTIVE_HIGH)
+    &gpio0 10 (GPIO_ACTIVE_HIGH)
+  >;
 
+  /* Baca baris sebagai HIGH, pull-down agar idle = LOW */
+  row-gpios = <
+    &gpio0 6   (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+    &gpio0 31  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+    &gpio1 11  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+    &gpio1 6   (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+    &gpio0 20  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+  >;
 
-    /* Rows (5 pin) – aktif low + pull-up */
-    row-gpios =
-        <&gpio0 6   (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-        <&gpio0 31  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-        <&gpio1 11  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-        <&gpio1 6   (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-        <&gpio0 20  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-    debounce-press-ms = <5>;
-    debounce-release-ms = <5>;
+  debounce-press-ms = <5>;
+  debounce-release-ms = <5>;
 };
 
 
