@@ -6,7 +6,7 @@
         zmk,matrix-transform = &default_transform;
     };
 
-    default_transform: matrix_transform_0 {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <5>;
@@ -31,7 +31,7 @@
         <&gpio0 22 (GPIO_ACTIVE_LOW>,
         <&gpio0 29 (GPIO_ACTIVE_LOW>,
         <&gpio1 13 (GPIO_ACTIVE_LOW>,
-        <&gpio0 2  (GPIO_ACTIVE_LOW,
+        <&gpio0 2  (GPIO_ACTIVE_LOW>,
         <&gpio1 15 (GPIO_ACTIVE_LOW>,
         <&gpio0 9  (GPIO_ACTIVE_LOW>,
         <&gpio0 10 (GPIO_ACTIVE_LOW>;
