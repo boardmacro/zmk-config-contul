@@ -78,18 +78,17 @@
 };
 
 /* Matikan peripheral yang tidak dipakai */
-&nfct   { status = "disabled"; }
-&spi0   { status = "disabled"; }
-&spi1   { status = "disabled"; }
-&spi2   { status = "disabled"; }
-&i2c1   { status = "disabled"; }
-&uart0  { status = "disabled"; }
-&uart1  { status = "disabled"; }
-&pwm0   { status = "disabled"; }
-&pwm1   { status = "disabled"; }
-&pwm2   { status = "disabled"; }
+&nfct   { status = "disabled"; };
+&spi0   { status = "disabled"; };
+&spi1   { status = "disabled"; };
+&spi2   { status = "disabled"; };
+&i2c1   { status = "disabled"; };
+&uart0  { status = "disabled"; };
+&uart1  { status = "disabled"; };
+&pwm0   { status = "disabled"; };
+&pwm1   { status = "disabled"; };
+&pwm2   { status = "disabled"; };
 
-/* Matikan LED PWM (alias pwmleds) yang tidak terpakai */
-&pwmleds {
-    status = "disabled";
-};
+/* Jika board punya LED PWM alias pwmleds, nonaktifkan juga */
+&pwmleds { status = "disabled"; };
+&gpio1 { status = "okay"; };
