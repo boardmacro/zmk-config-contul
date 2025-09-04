@@ -1,5 +1,4 @@
-/{
-  / {
+/ {
     chosen { zephyr,display = &oled; };
 };
 
