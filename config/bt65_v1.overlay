@@ -35,12 +35,12 @@
 
         /* Properti wajib binding SSD1306 */
         width = <128>;
-        height = <32>;              /* ganti ke 64 kalau panel 128x64 */
+        height = <32>;              /* sesuai spesifikasi kamu */
         display-offset = <0>;
-        multiplex-ratio = <31>;     /* 63 kalau height 64 */
+        multiplex-ratio = <31>;     /* tinggi panel - 1 */
         segment-offset = <0>;
         page-offset = <0>;
-        prechargep = <0x22>;
+        prechargep = <0x22>;        /* penting untuk inisialisasi */
 
         /* Properti opsional umum */
         segment-remap;
