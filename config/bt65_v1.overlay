@@ -26,7 +26,7 @@
     status = "okay";
     pinctrl-0 = <&i2c1_default>;
     pinctrl-names = "default";
-    clock-frequency = <I2C_BITRATE_STANDARD>; /* 100kHz */
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -40,6 +40,7 @@
         multiplex-ratio = <31>;   /* tinggi panel - 1 */
         segment-offset = <0>;
         page-offset = <0>;
+        prechargep = <0xF1>;      /* ✅ tambahan baru */
 
         /* Properti opsional umum */
         segment-remap;
