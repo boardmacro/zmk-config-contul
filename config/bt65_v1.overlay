@@ -11,7 +11,7 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-names = "default";
 
-    /* --- UJI DRIVER SSD1306 --- */
+    /* --- UJI DRIVER SSD1306 ---
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb-i2c";
         reg = <0x3c>;
@@ -26,9 +26,9 @@
         prechargep = <0x22>;
         reset-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>; /* opsional jika ada pin reset */
         power-on-delay-ms = <200>; /* delay ekstra sebelum init */
-    };
+    };*/
 
-    /* --- UJI DRIVER SH1106 ---
+     --- UJI DRIVER SH1106 ---
     oled: sh1106@3c {
         compatible = "sinowealth,sh1106fb-i2c";
         reg = <0x3c>;
@@ -44,7 +44,7 @@
         reset-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
         power-on-delay-ms = <200>;
     };
-    */
+    
 };
 
 /* Pin I2C0 */
