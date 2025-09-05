@@ -5,17 +5,13 @@
     };
 };
 
-/* Definisikan I2C custom di pin P0.17 (SDA) dan P0.20 (SCL) */
+/* Matikan I2C lain yang tidak dipakai */
 &i2c0 {
     status = "disabled";
 };
 
+/* Aktifkan I2C1 untuk OLED */
 &i2c1 {
-    status = "disabled";
-};
-
-/* Kita buat node I2C baru */
-&i2c2 {
     compatible = "nordic,nrf-twim";
     status = "okay";
     sda-pin = <17>;
