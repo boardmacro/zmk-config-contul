@@ -1,38 +1,48 @@
 / {
     chosen {
-        zephyr,display = &oled;
+        zephyr,display = &oled0;
+    };
+};
+
+/ {
+    vcc3v3: regulator_vcc3v3 {
+        compatible    = "regulator-fixed";
+        regulator-name= "VCC3V3";
+        regulator-always-on;
+        vin-supply    = <&vdd>;
+        output-voltage = <3300000>; /* 3.3 V */
     };
 };
 
 &i2c0 {
     status          = "okay";
     clock-frequency = <I2C_BITRATE_STANDARD>;
-    pinctrl-0       = <&i2c0_default>;
+
+    pinctrl-0       = <&i2c0_pins>;
     pinctrl-names   = "default";
 
-    oled: ssd1306@3c {
+    oled0: ssd1306@3c {
         compatible      = "solomon,ssd1306fb-i2c";
-        reg             = <0x3c>;        /* Ganti ke <0x3d> kalau modulmu alamatnya 0x3D */
+        reg             = <0x3c>;
         label           = "OLED0";
         status          = "okay";
         width           = <128>;
         height          = <32>;
 
-        /* Beberapa modul SSD1306 128×32 butuh dua properti ini agar buffer tampil */
+        vcc-supply      = <&vcc3v3>;
+
         segment-remap;
         com-invdir;
     };
 };
 
 &pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <
-                /* SDA = P0.17 */
-                NRF_PSEL(TWIM_SDA, 0, 17)
-                /* SCL = P0.20 */
-                NRF_PSEL(TWIM_SCL, 0, 20)
-            >;
-        };
+    i2c0_pins: i2c0_default {
+        psels = <
+            /* SDA = P0.17 */
+            NRF_PSEL(TWIM_SDA, 0, 17)
+            /* SCL = P0.20 */
+            NRF_PSEL(TWIM_SCL, 0, 20)
+        >;
     };
 };
