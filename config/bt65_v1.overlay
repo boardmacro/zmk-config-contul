@@ -5,9 +5,21 @@
     };
 };
 
-/* Ganti &i2c0 sesuai bus I²C yang dipakai nice!nano atau MCU kamu */
+/* Definisikan I2C custom di pin P0.17 (SDA) dan P0.20 (SCL) */
 &i2c0 {
+    status = "disabled";
+};
+
+&i2c1 {
+    status = "disabled";
+};
+
+/* Kita buat node I2C baru */
+&i2c2 {
+    compatible = "nordic,nrf-twim";
     status = "okay";
+    sda-pin = <17>;
+    scl-pin = <20>;
     clock-frequency = <I2C_BITRATE_STANDARD>; /* 100kHz */
 
     oled: ssd1306@3c {
@@ -20,6 +32,6 @@
         page-offset = <0>;
         segment-remap;
         com-invdir;
-        reset-gpios = <&pro_micro 21 GPIO_ACTIVE_LOW>; /* opsional, kalau ada pin reset */
+        /* reset-gpios bisa dihapus kalau OLED tidak punya pin reset */
     };
 };
