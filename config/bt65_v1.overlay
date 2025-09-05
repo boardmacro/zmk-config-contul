@@ -6,6 +6,7 @@
     };
 };
 
+/* node referensi dipisah dari root node */
 &i2c0 {
     status          = "okay";
     clock-frequency = <I2C_BITRATE_STANDARD>;
