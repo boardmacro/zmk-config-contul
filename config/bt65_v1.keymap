@@ -7,16 +7,12 @@
 
         default_layer {
             bindings = <
-                // Baris 1 (10 key)
-                &kp ESC    &kp 1    &kp 2    &kp 3    &kp 4    &kp 5    &kp 6    &kp 7    &kp 8    &kp 9
-                // Baris 2 (10 key)
-                &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I    &kp O
-                // Baris 3 (10 key)
-                &kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K    &kp L
-                // Baris 4 (10 key)
-                &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M    &kp COMMA &kp DOT
-                // Baris 5 (10 key)
-                &kp LCTRL  &kp LGUI &kp LALT &kp SPACE &kp SPACE &kp SPACE &kp SPACE &kp RALT &kp RGUI &kp RCTRL
+                
+                &kp ESC    &kp 1    &kp 2    &kp 3    &kp 4    &kp 5      &kp 6      &kp 7      &kp 8       &kp 9              
+                &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T      &kp Y      &kp U      &kp I       &kp O              
+                &kp F1     &kp A    &kp S    &kp D    &kp F    &kp G      &kp H      &kp J      &kp K       &kp L           
+                &kp F2     &kp Z    &kp X    &kp C    &kp V    &kp B      &kp N      &kp M      &kp COMMA   &kp DOT             
+                &kp F3     &kp F4   &kp F5   &kp F6   &kp F7   &kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE   &kp SPACE
             >;
         };
     };
