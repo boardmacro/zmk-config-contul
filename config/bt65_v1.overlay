@@ -12,20 +12,15 @@
 
     oled: ssd1306@3c {
         compatible      = "solomon,ssd1306fb-i2c";
-        reg             = <0x3c>;        // coba ganti ke <0x3d> kalau tetap gelap
+        reg             = <0x3c>;        /* Ganti ke <0x3d> kalau modulmu alamatnya 0x3D */
         label           = "OLED0";
         status          = "okay";
         width           = <128>;
         height          = <32>;
-        multiplex-ratio = <31>;
-        display-offset  = <0>;
-        page-offset     = <0>;
-        segment-offset  = <0>;
-        prechargep      = <0x22>;
 
-        /* Tambahkan dua ini: sering wajib untuk 128x32 */
-        segment-remap;   /* mirror X */
-        com-invdir;      /* invert Y scan */
+        /* Beberapa modul SSD1306 128×32 butuh dua properti ini agar buffer tampil */
+        segment-remap;
+        com-invdir;
     };
 };
 
@@ -33,12 +28,11 @@
     i2c0_default: i2c0_default {
         group1 {
             psels = <
-                NRF_PSEL(TWIM_SDA, 0, 17)   /* SDA = P1.00 (D6) */
-                NRF_PSEL(TWIM_SCL, 0, 20)  /* SCL = P0.11 (D7) */
+                /* SDA = P0.17 */
+                NRF_PSEL(TWIM_SDA, 0, 17)
+                /* SCL = P0.20 */
+                NRF_PSEL(TWIM_SCL, 0, 20)
             >;
         };
     };
 };
-
-/* Pastikan NFC mati karena kamu pakai P0.09 & P0.10 sebagai kolom */
-&nfct { status = "disabled"; };
