@@ -1,5 +1,0 @@
-/dts-v1/;
-/ {
-    model = "BT65 v1";
-    compatible = "zmk,keyboard";
-};
