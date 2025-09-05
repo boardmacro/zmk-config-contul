@@ -91,9 +91,9 @@
 &pwm1    { status = "disabled"; };
 &pwm2    { status = "disabled"; };
 &pwmleds {
-    compatible = "pwm-leds";
     status = "disabled";
 };
+
 
 
 /* Aktifkan GPIO1 jika dibutuhkan */
