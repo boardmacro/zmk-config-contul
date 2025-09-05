@@ -84,7 +84,7 @@
 &spi0    { status = "disabled"; };
 &spi1    { status = "disabled"; };
 &spi2    { status = "disabled"; };
-&i2c1    { status = "disabled"; };
+
 &uart0   { status = "disabled"; };
 &uart1   { status = "disabled"; };
 
