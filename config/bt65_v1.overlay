@@ -10,9 +10,9 @@
     status = "disabled";
 };
 
-/* Definisi pinctrl untuk I2C1 */
+/* Definisi pinctrl untuk I2C0 */
 &pinctrl {
-    i2c1_default: i2c1_default {
+    i2c0_default: i2c0_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
                     <NRF_PSEL(TWIM_SCL, 0, 20)>;
@@ -21,7 +21,7 @@
 };
 
 /* Aktifkan I2C1 untuk OLED */
-&i2c1 {
+&i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
     pinctrl-0 = <&i2c1_default>;
@@ -30,7 +30,7 @@
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3d>;
+        reg = <0x3c>;
         label = "SSD1306";
 
         /* Properti wajib binding SSD1306 */
