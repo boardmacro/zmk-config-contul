@@ -30,7 +30,7 @@
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
+        reg = <0x3d>;
         label = "SSD1306";
 
         /* Properti wajib binding SSD1306 */
