@@ -12,25 +12,21 @@
     pinctrl-names   = "default";
 
     oled0: ssd1306@3c {
-        compatible      = "solomon,ssd1306fb-i2c";
-        reg             = <0x3c>;        /* Ubah ke <0x3d> kalau alamat modulmu 0x3D */
-        label           = "OLED0";
-        status          = "okay";
-        width           = <128>;
-        height          = <32>;
-
-        /* Dua properti ini sering wajib agar buffer tampil di panel 128×32 */
-        segment-remap;   
-        com-invdir;      
+        compatible    = "solomon,ssd1306fb-i2c";
+        reg           = <0x3c>;
+        label         = "OLED0";
+        status        = "okay";
+        width         = <128>;
+        height        = <32>;
+        segment-remap;
+        com-invdir;
     };
 };
 
 &pinctrl {
     i2c0_pins: i2c0_default {
         psels = <
-            /* SDA → P0.17 */
             NRF_PSEL(TWIM_SDA, 0, 17)
-            /* SCL → P0.20 */
             NRF_PSEL(TWIM_SCL, 0, 20)
         >;
     };
