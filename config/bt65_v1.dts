@@ -26,7 +26,7 @@
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb-i2c";
-        reg = <0x3c>;
+        reg = <0x3d>;
         label = "OLED0";
         width = <128>;
         height = <32>;
@@ -52,6 +52,6 @@
 &spi0    { status = "disabled"; };
 &spi1    { status = "disabled"; };
 &spi2    { status = "disabled"; };
-&i2c1    { status = "disabled"; };
+
 &uart0   { status = "disabled"; };
 &uart1   { status = "disabled"; };
